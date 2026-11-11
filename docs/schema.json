@@ -1,0 +1,1117 @@
+{
+  "data/base/app_segments.csv": {
+    "rows": 9910,
+    "primary_key": [
+      "segment_id"
+    ],
+    "fields": [
+      {
+        "file": "data/base/app_segments.csv",
+        "column": "participant_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Pseudonymous source participant identifier; stable across all tables."
+      },
+      {
+        "file": "data/base/app_segments.csv",
+        "column": "study_day",
+        "type": "int64",
+        "unit": "index",
+        "missing_count": 0,
+        "description": "Supplied observation-day index; preserved, not inferred from midnight."
+      },
+      {
+        "file": "data/base/app_segments.csv",
+        "column": "session_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Stable supplied session identifier; not reconstructed from event rows in this release."
+      },
+      {
+        "file": "data/base/app_segments.csv",
+        "column": "segment_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Stable supplied category interval identifier."
+      },
+      {
+        "file": "data/base/app_segments.csv",
+        "column": "segment_order",
+        "type": "int64",
+        "unit": "index",
+        "missing_count": 0,
+        "description": "One-based within-session interval order; recomputed in cleaned data."
+      },
+      {
+        "file": "data/base/app_segments.csv",
+        "column": "activity_category",
+        "type": "object",
+        "unit": "category",
+        "missing_count": 0,
+        "description": "One of the 12 documented software-activity categories."
+      },
+      {
+        "file": "data/base/app_segments.csv",
+        "column": "segment_start_sec",
+        "type": "float64",
+        "unit": "relative seconds",
+        "missing_count": 0,
+        "description": "Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+      },
+      {
+        "file": "data/base/app_segments.csv",
+        "column": "segment_end_sec",
+        "type": "float64",
+        "unit": "relative seconds",
+        "missing_count": 0,
+        "description": "Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+      }
+    ]
+  },
+  "data/base/context_samples.csv": {
+    "rows": 238764,
+    "primary_key": [
+      "context_id"
+    ],
+    "fields": [
+      {
+        "file": "data/base/context_samples.csv",
+        "column": "context_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Deterministic source-row index assigned during import."
+      },
+      {
+        "file": "data/base/context_samples.csv",
+        "column": "participant_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Pseudonymous source participant identifier; stable across all tables."
+      },
+      {
+        "file": "data/base/context_samples.csv",
+        "column": "study_day",
+        "type": "int64",
+        "unit": "index",
+        "missing_count": 0,
+        "description": "Supplied observation-day index; preserved, not inferred from midnight."
+      },
+      {
+        "file": "data/base/context_samples.csv",
+        "column": "session_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Stable supplied session identifier; not reconstructed from event rows in this release."
+      },
+      {
+        "file": "data/base/context_samples.csv",
+        "column": "ambient_light_lux",
+        "type": "float64",
+        "unit": "source-declared lux",
+        "missing_count": 0,
+        "description": "Supplied context light value; physical calibration not independently verified."
+      },
+      {
+        "file": "data/base/context_samples.csv",
+        "column": "screen_brightness",
+        "type": "float64",
+        "unit": "source scale unspecified",
+        "missing_count": 0,
+        "description": "Supplied numeric brightness; not interpreted as percent or converted to Android 0\u2013255 scale."
+      },
+      {
+        "file": "data/base/context_samples.csv",
+        "column": "accelerometer_magnitude",
+        "type": "float64",
+        "unit": "source scale unspecified",
+        "missing_count": 0,
+        "description": "Supplied acceleration magnitude; reference collector computes Euclidean norm of three axes."
+      },
+      {
+        "file": "data/base/context_samples.csv",
+        "column": "gyroscope_magnitude",
+        "type": "float64",
+        "unit": "source scale unspecified",
+        "missing_count": 0,
+        "description": "Supplied angular-velocity magnitude; reference collector computes Euclidean norm of three axes."
+      },
+      {
+        "file": "data/base/context_samples.csv",
+        "column": "time_sec",
+        "type": "float64",
+        "unit": "relative seconds",
+        "missing_count": 0,
+        "description": "Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+      }
+    ]
+  },
+  "data/base/participants.csv": {
+    "rows": 36,
+    "primary_key": [
+      "participant_id"
+    ],
+    "fields": [
+      {
+        "file": "data/base/participants.csv",
+        "column": "participant_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Pseudonymous source participant identifier; stable across all tables."
+      }
+    ]
+  },
+  "data/base/phone_events.csv": {
+    "rows": 40998,
+    "primary_key": [
+      "event_id"
+    ],
+    "fields": [
+      {
+        "file": "data/base/phone_events.csv",
+        "column": "event_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Deterministic source-row index assigned during import; not an original Android event ID."
+      },
+      {
+        "file": "data/base/phone_events.csv",
+        "column": "participant_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Pseudonymous source participant identifier; stable across all tables."
+      },
+      {
+        "file": "data/base/phone_events.csv",
+        "column": "study_day",
+        "type": "int64",
+        "unit": "index",
+        "missing_count": 0,
+        "description": "Supplied observation-day index; preserved, not inferred from midnight."
+      },
+      {
+        "file": "data/base/phone_events.csv",
+        "column": "session_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Stable supplied session identifier; not reconstructed from event rows in this release."
+      },
+      {
+        "file": "data/base/phone_events.csv",
+        "column": "event_type",
+        "type": "object",
+        "unit": "category",
+        "missing_count": 0,
+        "description": "Supplied event type; may include canonical export events not produced directly by the reference collector."
+      },
+      {
+        "file": "data/base/phone_events.csv",
+        "column": "activity_category",
+        "type": "object",
+        "unit": "category",
+        "missing_count": 22536,
+        "description": "One of the 12 documented software-activity categories."
+      },
+      {
+        "file": "data/base/phone_events.csv",
+        "column": "screen_state",
+        "type": "object",
+        "unit": "category",
+        "missing_count": 0,
+        "description": "Supplied screen-state label; not independent evidence of active attention."
+      },
+      {
+        "file": "data/base/phone_events.csv",
+        "column": "lock_state",
+        "type": "object",
+        "unit": "category",
+        "missing_count": 0,
+        "description": "Supplied lock-state label; not used to reconstruct sessions in this package."
+      },
+      {
+        "file": "data/base/phone_events.csv",
+        "column": "time_sec",
+        "type": "float64",
+        "unit": "relative seconds",
+        "missing_count": 0,
+        "description": "Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+      }
+    ]
+  },
+  "data/base/phone_sessions.csv": {
+    "rows": 5634,
+    "primary_key": [
+      "session_id"
+    ],
+    "fields": [
+      {
+        "file": "data/base/phone_sessions.csv",
+        "column": "participant_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Pseudonymous source participant identifier; stable across all tables."
+      },
+      {
+        "file": "data/base/phone_sessions.csv",
+        "column": "study_day",
+        "type": "int64",
+        "unit": "index",
+        "missing_count": 0,
+        "description": "Supplied observation-day index; preserved, not inferred from midnight."
+      },
+      {
+        "file": "data/base/phone_sessions.csv",
+        "column": "session_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Stable supplied session identifier; not reconstructed from event rows in this release."
+      },
+      {
+        "file": "data/base/phone_sessions.csv",
+        "column": "session_start_sec",
+        "type": "float64",
+        "unit": "relative seconds",
+        "missing_count": 0,
+        "description": "Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+      },
+      {
+        "file": "data/base/phone_sessions.csv",
+        "column": "session_end_sec",
+        "type": "float64",
+        "unit": "relative seconds",
+        "missing_count": 0,
+        "description": "Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+      }
+    ]
+  },
+  "data/base/study_days.csv": {
+    "rows": 108,
+    "primary_key": [
+      "participant_id",
+      "study_day"
+    ],
+    "fields": [
+      {
+        "file": "data/base/study_days.csv",
+        "column": "participant_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Pseudonymous source participant identifier; stable across all tables."
+      },
+      {
+        "file": "data/base/study_days.csv",
+        "column": "study_day",
+        "type": "int64",
+        "unit": "index",
+        "missing_count": 0,
+        "description": "Supplied observation-day index; preserved, not inferred from midnight."
+      },
+      {
+        "file": "data/base/study_days.csv",
+        "column": "day_offset",
+        "type": "int64",
+        "unit": "days",
+        "missing_count": 0,
+        "description": "Source observation date minus the participant-specific first-session midnight; original date removed."
+      }
+    ]
+  },
+  "data/derived/app_segments.csv": {
+    "rows": 9910,
+    "primary_key": [
+      "segment_id"
+    ],
+    "fields": [
+      {
+        "file": "data/derived/app_segments.csv",
+        "column": "participant_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Pseudonymous source participant identifier; stable across all tables."
+      },
+      {
+        "file": "data/derived/app_segments.csv",
+        "column": "study_day",
+        "type": "int64",
+        "unit": "index",
+        "missing_count": 0,
+        "description": "Supplied observation-day index; preserved, not inferred from midnight."
+      },
+      {
+        "file": "data/derived/app_segments.csv",
+        "column": "session_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Stable supplied session identifier; not reconstructed from event rows in this release."
+      },
+      {
+        "file": "data/derived/app_segments.csv",
+        "column": "segment_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Stable supplied category interval identifier."
+      },
+      {
+        "file": "data/derived/app_segments.csv",
+        "column": "segment_order",
+        "type": "int64",
+        "unit": "index",
+        "missing_count": 0,
+        "description": "One-based within-session interval order; recomputed in cleaned data."
+      },
+      {
+        "file": "data/derived/app_segments.csv",
+        "column": "activity_category",
+        "type": "object",
+        "unit": "category",
+        "missing_count": 0,
+        "description": "One of the 12 documented software-activity categories."
+      },
+      {
+        "file": "data/derived/app_segments.csv",
+        "column": "segment_start_sec",
+        "type": "float64",
+        "unit": "relative seconds",
+        "missing_count": 0,
+        "description": "Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+      },
+      {
+        "file": "data/derived/app_segments.csv",
+        "column": "segment_end_sec",
+        "type": "float64",
+        "unit": "relative seconds",
+        "missing_count": 0,
+        "description": "Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+      },
+      {
+        "file": "data/derived/app_segments.csv",
+        "column": "source_segment_start_sec",
+        "type": "float64",
+        "unit": "relative seconds",
+        "missing_count": 0,
+        "description": "Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+      },
+      {
+        "file": "data/derived/app_segments.csv",
+        "column": "source_segment_end_sec",
+        "type": "float64",
+        "unit": "relative seconds",
+        "missing_count": 0,
+        "description": "Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+      },
+      {
+        "file": "data/derived/app_segments.csv",
+        "column": "boundary_adjusted",
+        "type": "bool",
+        "unit": "boolean",
+        "missing_count": 0,
+        "description": "Interval start or end changed by clipping to its parent session."
+      },
+      {
+        "file": "data/derived/app_segments.csv",
+        "column": "segment_duration_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Cleaned segment end minus start."
+      },
+      {
+        "file": "data/derived/app_segments.csv",
+        "column": "is_category_change",
+        "type": "bool",
+        "unit": "boolean",
+        "missing_count": 0,
+        "description": "True for a noninitial segment whose category differs from the preceding segment in the same session."
+      }
+    ]
+  },
+  "data/derived/between_session_transitions.csv": {
+    "rows": 5598,
+    "primary_key": [
+      "previous_session_id",
+      "next_session_id"
+    ],
+    "fields": [
+      {
+        "file": "data/derived/between_session_transitions.csv",
+        "column": "participant_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Pseudonymous source participant identifier; stable across all tables."
+      },
+      {
+        "file": "data/derived/between_session_transitions.csv",
+        "column": "previous_session_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Previous recorded session for the same participant; missing for first session."
+      },
+      {
+        "file": "data/derived/between_session_transitions.csv",
+        "column": "next_session_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Next recorded session in a consecutive pair."
+      },
+      {
+        "file": "data/derived/between_session_transitions.csv",
+        "column": "previous_study_day",
+        "type": "float64",
+        "unit": "index",
+        "missing_count": 0,
+        "description": "Study day of previous recorded session; missing for first session."
+      },
+      {
+        "file": "data/derived/between_session_transitions.csv",
+        "column": "next_study_day",
+        "type": "int64",
+        "unit": "index",
+        "missing_count": 0,
+        "description": "Study-day label of next session."
+      },
+      {
+        "file": "data/derived/between_session_transitions.csv",
+        "column": "gap_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Next start minus previous end; unknown logger uptime prevents interpreting it as observed inactivity."
+      },
+      {
+        "file": "data/derived/between_session_transitions.csv",
+        "column": "cross_study_day",
+        "type": "bool",
+        "unit": "boolean",
+        "missing_count": 0,
+        "description": "Pair crosses study-day labels; gap is not verified continuously observed idle time."
+      }
+    ]
+  },
+  "data/derived/daily_summary.csv": {
+    "rows": 108,
+    "primary_key": [
+      "participant_id",
+      "study_day"
+    ],
+    "fields": [
+      {
+        "file": "data/derived/daily_summary.csv",
+        "column": "participant_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Pseudonymous source participant identifier; stable across all tables."
+      },
+      {
+        "file": "data/derived/daily_summary.csv",
+        "column": "study_day",
+        "type": "int64",
+        "unit": "index",
+        "missing_count": 0,
+        "description": "Supplied observation-day index; preserved, not inferred from midnight."
+      },
+      {
+        "file": "data/derived/daily_summary.csv",
+        "column": "recorded_session_time_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Sum of elapsed session durations including any gaps already merged upstream."
+      },
+      {
+        "file": "data/derived/daily_summary.csv",
+        "column": "session_count",
+        "type": "int64",
+        "unit": "count",
+        "missing_count": 0,
+        "description": "Recorded sessions in participant/study-day group."
+      },
+      {
+        "file": "data/derived/daily_summary.csv",
+        "column": "median_session_duration_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Median session duration within supplied observation day."
+      },
+      {
+        "file": "data/derived/daily_summary.csv",
+        "column": "max_session_duration_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Maximum session duration within supplied observation day."
+      },
+      {
+        "file": "data/derived/daily_summary.csv",
+        "column": "category_changes",
+        "type": "int64",
+        "unit": "count",
+        "missing_count": 0,
+        "description": "Actual within-session category changes in the day."
+      },
+      {
+        "file": "data/derived/daily_summary.csv",
+        "column": "unlabelled_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Session/window duration with no category interval support; never imputed."
+      },
+      {
+        "file": "data/derived/daily_summary.csv",
+        "column": "category_changes_per_hour",
+        "type": "float64",
+        "unit": "changes/hour",
+        "missing_count": 0,
+        "description": "Within-session category changes divided by elapsed recorded session hours."
+      },
+      {
+        "file": "data/derived/daily_summary.csv",
+        "column": "activity_seconds_BROWSER_SEARCH",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Total clipped segment duration for category BROWSER_SEARCH."
+      },
+      {
+        "file": "data/derived/daily_summary.csv",
+        "column": "activity_seconds_CAMERA_MEDIA",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Total clipped segment duration for category CAMERA_MEDIA."
+      },
+      {
+        "file": "data/derived/daily_summary.csv",
+        "column": "activity_seconds_GAMING",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Total clipped segment duration for category GAMING."
+      },
+      {
+        "file": "data/derived/daily_summary.csv",
+        "column": "activity_seconds_MAP_NAVIGATION",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Total clipped segment duration for category MAP_NAVIGATION."
+      },
+      {
+        "file": "data/derived/daily_summary.csv",
+        "column": "activity_seconds_MESSAGING",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Total clipped segment duration for category MESSAGING."
+      },
+      {
+        "file": "data/derived/daily_summary.csv",
+        "column": "activity_seconds_MUSIC_AUDIO",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Total clipped segment duration for category MUSIC_AUDIO."
+      },
+      {
+        "file": "data/derived/daily_summary.csv",
+        "column": "activity_seconds_OTHER",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Total clipped segment duration for category OTHER."
+      },
+      {
+        "file": "data/derived/daily_summary.csv",
+        "column": "activity_seconds_PRODUCTIVITY",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Total clipped segment duration for category PRODUCTIVITY."
+      },
+      {
+        "file": "data/derived/daily_summary.csv",
+        "column": "activity_seconds_READING_NEWS",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Total clipped segment duration for category READING_NEWS."
+      },
+      {
+        "file": "data/derived/daily_summary.csv",
+        "column": "activity_seconds_SHOPPING",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Total clipped segment duration for category SHOPPING."
+      },
+      {
+        "file": "data/derived/daily_summary.csv",
+        "column": "activity_seconds_SOCIAL_FEED",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Total clipped segment duration for category SOCIAL_FEED."
+      },
+      {
+        "file": "data/derived/daily_summary.csv",
+        "column": "activity_seconds_VIDEO",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Total clipped segment duration for category VIDEO."
+      }
+    ]
+  },
+  "data/derived/phone_sessions.csv": {
+    "rows": 5634,
+    "primary_key": [
+      "session_id"
+    ],
+    "fields": [
+      {
+        "file": "data/derived/phone_sessions.csv",
+        "column": "participant_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Pseudonymous source participant identifier; stable across all tables."
+      },
+      {
+        "file": "data/derived/phone_sessions.csv",
+        "column": "study_day",
+        "type": "int64",
+        "unit": "index",
+        "missing_count": 0,
+        "description": "Supplied observation-day index; preserved, not inferred from midnight."
+      },
+      {
+        "file": "data/derived/phone_sessions.csv",
+        "column": "session_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Stable supplied session identifier; not reconstructed from event rows in this release."
+      },
+      {
+        "file": "data/derived/phone_sessions.csv",
+        "column": "session_start_sec",
+        "type": "float64",
+        "unit": "relative seconds",
+        "missing_count": 0,
+        "description": "Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+      },
+      {
+        "file": "data/derived/phone_sessions.csv",
+        "column": "session_end_sec",
+        "type": "float64",
+        "unit": "relative seconds",
+        "missing_count": 0,
+        "description": "Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+      },
+      {
+        "file": "data/derived/phone_sessions.csv",
+        "column": "session_duration_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Elapsed interval end minus start, including any brief gaps merged in supplied sessions."
+      },
+      {
+        "file": "data/derived/phone_sessions.csv",
+        "column": "session_order_today",
+        "type": "int64",
+        "unit": "index",
+        "missing_count": 0,
+        "description": "One-based chronological session order within supplied participant/study-day group."
+      },
+      {
+        "file": "data/derived/phone_sessions.csv",
+        "column": "previous_session_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 36,
+        "description": "Previous recorded session for the same participant; missing for first session."
+      },
+      {
+        "file": "data/derived/phone_sessions.csv",
+        "column": "break_before_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 36,
+        "description": "Current start minus previous recorded session end, across study-day boundaries; first session missing."
+      },
+      {
+        "file": "data/derived/phone_sessions.csv",
+        "column": "previous_study_day",
+        "type": "float64",
+        "unit": "index",
+        "missing_count": 36,
+        "description": "Study day of previous recorded session; missing for first session."
+      },
+      {
+        "file": "data/derived/phone_sessions.csv",
+        "column": "cross_day_before",
+        "type": "bool",
+        "unit": "boolean",
+        "missing_count": 0,
+        "description": "Previous recorded session exists and has a different study-day label."
+      },
+      {
+        "file": "data/derived/phone_sessions.csv",
+        "column": "number_segments",
+        "type": "int64",
+        "unit": "count",
+        "missing_count": 0,
+        "description": "Number of linked cleaned segments."
+      },
+      {
+        "file": "data/derived/phone_sessions.csv",
+        "column": "number_category_changes",
+        "type": "int64",
+        "unit": "count",
+        "missing_count": 0,
+        "description": "Actual within-session category changes; not assumed equal to segment count minus one."
+      },
+      {
+        "file": "data/derived/phone_sessions.csv",
+        "column": "unique_categories",
+        "type": "int64",
+        "unit": "count",
+        "missing_count": 0,
+        "description": "Number of distinct segment categories within a session."
+      },
+      {
+        "file": "data/derived/phone_sessions.csv",
+        "column": "recent_use_30min_before_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Intersection duration of recorded participant sessions and trailing horizon at window/session start. Can span study days; unavailable history is not observed inactivity."
+      },
+      {
+        "file": "data/derived/phone_sessions.csv",
+        "column": "recent_use_1h_before_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Intersection duration of recorded participant sessions and trailing horizon at window/session start. Can span study days; unavailable history is not observed inactivity."
+      },
+      {
+        "file": "data/derived/phone_sessions.csv",
+        "column": "recent_use_2h_before_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Intersection duration of recorded participant sessions and trailing horizon at window/session start. Can span study days; unavailable history is not observed inactivity."
+      },
+      {
+        "file": "data/derived/phone_sessions.csv",
+        "column": "recent_use_6h_before_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Intersection duration of recorded participant sessions and trailing horizon at window/session start. Can span study days; unavailable history is not observed inactivity."
+      },
+      {
+        "file": "data/derived/phone_sessions.csv",
+        "column": "history_since_first_session_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Elapsed time since first recorded session; not a measure of logger uptime."
+      },
+      {
+        "file": "data/derived/phone_sessions.csv",
+        "column": "cumulative_daily_use_before_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Sum of preceding session durations within supplied study day."
+      },
+      {
+        "file": "data/derived/phone_sessions.csv",
+        "column": "category_covered_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Sum of clipped category interval overlaps."
+      },
+      {
+        "file": "data/derived/phone_sessions.csv",
+        "column": "unlabelled_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Session/window duration with no category interval support; never imputed."
+      },
+      {
+        "file": "data/derived/phone_sessions.csv",
+        "column": "dominant_category",
+        "type": "object",
+        "unit": "category",
+        "missing_count": 0,
+        "description": "Largest total clipped category duration in the session; alphabetical exact-tie break."
+      }
+    ]
+  },
+  "data/derived/windows_60s.csv": {
+    "rows": 22931,
+    "primary_key": [
+      "window_id"
+    ],
+    "fields": [
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "participant_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Pseudonymous source participant identifier; stable across all tables."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "study_day",
+        "type": "int64",
+        "unit": "index",
+        "missing_count": 0,
+        "description": "Supplied observation-day index; preserved, not inferred from midnight."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "session_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Stable supplied session identifier; not reconstructed from event rows in this release."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "window_id",
+        "type": "object",
+        "unit": "identifier",
+        "missing_count": 0,
+        "description": "Session identifier plus a zero-based four-digit window index."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "window_idx",
+        "type": "int64",
+        "unit": "index",
+        "missing_count": 0,
+        "description": "Zero-based index of consecutive 60-second session-relative windows."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "window_start_sec",
+        "type": "float64",
+        "unit": "relative seconds",
+        "missing_count": 0,
+        "description": "Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "window_end_sec",
+        "type": "float64",
+        "unit": "relative seconds",
+        "missing_count": 0,
+        "description": "Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "window_actual_duration_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Window end minus start; partial terminal windows retained."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "dominant_activity_category",
+        "type": "object",
+        "unit": "category",
+        "missing_count": 0,
+        "description": "Largest category-overlap duration in the window; alphabetical exact-tie break; UNLABELLED when no coverage."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "category_covered_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Sum of clipped category interval overlaps."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "unlabelled_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Session/window duration with no category interval support; never imputed."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "n_categories",
+        "type": "int64",
+        "unit": "count",
+        "missing_count": 0,
+        "description": "Distinct categories with positive overlap above numerical tolerance in a window."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "dominant_overlap_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Largest category-overlap duration within window."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "dominant_fraction",
+        "type": "float64",
+        "unit": "fraction",
+        "missing_count": 0,
+        "description": "Dominant category overlap divided by actual window duration (including unlabelled time)."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "minority_category_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Category-covered duration minus dominant category duration."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "rolling_use_30min_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Intersection duration of recorded participant sessions and trailing horizon at window/session start. Can span study days; unavailable history is not observed inactivity."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "rolling_use_1h_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Intersection duration of recorded participant sessions and trailing horizon at window/session start. Can span study days; unavailable history is not observed inactivity."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "rolling_use_2h_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Intersection duration of recorded participant sessions and trailing horizon at window/session start. Can span study days; unavailable history is not observed inactivity."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "rolling_use_6h_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Intersection duration of recorded participant sessions and trailing horizon at window/session start. Can span study days; unavailable history is not observed inactivity."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "cumulative_daily_use_sec",
+        "type": "float64",
+        "unit": "seconds",
+        "missing_count": 0,
+        "description": "Recorded duration within supplied study day before window start."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "mean_ambient_light_lux",
+        "type": "float64",
+        "unit": "source scale; see base field",
+        "missing_count": 30,
+        "description": "Arithmetic mean of nonmissing direct context samples in window: ambient_light_lux. Not time-weighted or interpolated."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "mean_screen_brightness",
+        "type": "float64",
+        "unit": "source scale; see base field",
+        "missing_count": 30,
+        "description": "Arithmetic mean of nonmissing direct context samples in window: screen_brightness. Not time-weighted or interpolated."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "mean_accelerometer_magnitude",
+        "type": "float64",
+        "unit": "source scale; see base field",
+        "missing_count": 30,
+        "description": "Arithmetic mean of nonmissing direct context samples in window: accelerometer_magnitude. Not time-weighted or interpolated."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "mean_gyroscope_magnitude",
+        "type": "float64",
+        "unit": "source scale; see base field",
+        "missing_count": 30,
+        "description": "Arithmetic mean of nonmissing direct context samples in window: gyroscope_magnitude. Not time-weighted or interpolated."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "context_sample_count",
+        "type": "int64",
+        "unit": "count",
+        "missing_count": 0,
+        "description": "Context samples assigned by half-open session-relative time; no interpolation."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "n_ambient_light_lux",
+        "type": "int64",
+        "unit": "count",
+        "missing_count": 0,
+        "description": "Number of nonmissing direct context samples for ambient_light_lux."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "n_screen_brightness",
+        "type": "int64",
+        "unit": "count",
+        "missing_count": 0,
+        "description": "Number of nonmissing direct context samples for screen_brightness."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "n_accelerometer_magnitude",
+        "type": "int64",
+        "unit": "count",
+        "missing_count": 0,
+        "description": "Number of nonmissing direct context samples for accelerometer_magnitude."
+      },
+      {
+        "file": "data/derived/windows_60s.csv",
+        "column": "n_gyroscope_magnitude",
+        "type": "int64",
+        "unit": "count",
+        "missing_count": 0,
+        "description": "Number of nonmissing direct context samples for gyroscope_magnitude."
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "data/base/app_segments.csv": "b8140b7c24b3d2a933ec333d037f80bd28bacedfb9f3601c4164b525082d0ed2",
+  "data/base/context_samples.csv": "c8a2c41d35a2cd1528c4ba67e46620545d6942f3ac14bef27ae9fbcf603a6ffe",
+  "data/base/participants.csv": "3a95fd738de44310f227d9ee7ec63243c6c7e0e1f3c1ddd2e4f22e1ea48e9246",
+  "data/base/phone_events.csv": "52394ebac806cd018f2f1ed9ce385d256f84c860a782333cb244be8df2c218b7",
+  "data/base/phone_sessions.csv": "517ffd7141af111912f69c46cd02b03668c7752df47cd5cc16b13e71243c9b35",
+  "data/base/study_days.csv": "cc0530b4961ff66d19e85b75f27ba00e0fa1c27297911122ab10d13945c07927",
+  "data/derived/app_segments.csv": "a608d2662b059cbce81046776bbca7060a839ff1d372f684a6641be0e0c34515",
+  "data/derived/between_session_transitions.csv": "461251f9257085d4e947e9136b5d22875b323f1406a06ea84ba3ab1454e32c7a",
+  "data/derived/daily_summary.csv": "2c92047519483a3c411dd4484d7c75562a700f02e68f1fd08df93314c9222c4c",
+  "data/derived/phone_sessions.csv": "f5769d064566757c02c28f6465ba1e1e5d1b4a03f021c2d28152d3d258bd9047",
+  "data/derived/windows_60s.csv": "30e3bd918e5199de42275e25303915926d37a04d936d905ef6fc105180c5de06"
+}

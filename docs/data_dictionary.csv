@@ -1,0 +1,129 @@
+file,column,type,unit,missing_count,description
+data/base/app_segments.csv,participant_id,object,identifier,0,Pseudonymous source participant identifier; stable across all tables.
+data/base/app_segments.csv,study_day,int64,index,0,"Supplied observation-day index; preserved, not inferred from midnight."
+data/base/app_segments.csv,session_id,object,identifier,0,Stable supplied session identifier; not reconstructed from event rows in this release.
+data/base/app_segments.csv,segment_id,object,identifier,0,Stable supplied category interval identifier.
+data/base/app_segments.csv,segment_order,int64,index,0,One-based within-session interval order; recomputed in cleaned data.
+data/base/app_segments.csv,activity_category,object,category,0,One of the 12 documented software-activity categories.
+data/base/app_segments.csv,segment_start_sec,float64,relative seconds,0,"Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+data/base/app_segments.csv,segment_end_sec,float64,relative seconds,0,"Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+data/base/context_samples.csv,context_id,object,identifier,0,Deterministic source-row index assigned during import.
+data/base/context_samples.csv,participant_id,object,identifier,0,Pseudonymous source participant identifier; stable across all tables.
+data/base/context_samples.csv,study_day,int64,index,0,"Supplied observation-day index; preserved, not inferred from midnight."
+data/base/context_samples.csv,session_id,object,identifier,0,Stable supplied session identifier; not reconstructed from event rows in this release.
+data/base/context_samples.csv,ambient_light_lux,float64,source-declared lux,0,Supplied context light value; physical calibration not independently verified.
+data/base/context_samples.csv,screen_brightness,float64,source scale unspecified,0,Supplied numeric brightness; not interpreted as percent or converted to Android 0–255 scale.
+data/base/context_samples.csv,accelerometer_magnitude,float64,source scale unspecified,0,Supplied acceleration magnitude; reference collector computes Euclidean norm of three axes.
+data/base/context_samples.csv,gyroscope_magnitude,float64,source scale unspecified,0,Supplied angular-velocity magnitude; reference collector computes Euclidean norm of three axes.
+data/base/context_samples.csv,time_sec,float64,relative seconds,0,"Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+data/base/participants.csv,participant_id,object,identifier,0,Pseudonymous source participant identifier; stable across all tables.
+data/base/phone_events.csv,event_id,object,identifier,0,Deterministic source-row index assigned during import; not an original Android event ID.
+data/base/phone_events.csv,participant_id,object,identifier,0,Pseudonymous source participant identifier; stable across all tables.
+data/base/phone_events.csv,study_day,int64,index,0,"Supplied observation-day index; preserved, not inferred from midnight."
+data/base/phone_events.csv,session_id,object,identifier,0,Stable supplied session identifier; not reconstructed from event rows in this release.
+data/base/phone_events.csv,event_type,object,category,0,Supplied event type; may include canonical export events not produced directly by the reference collector.
+data/base/phone_events.csv,activity_category,object,category,22536,One of the 12 documented software-activity categories.
+data/base/phone_events.csv,screen_state,object,category,0,Supplied screen-state label; not independent evidence of active attention.
+data/base/phone_events.csv,lock_state,object,category,0,Supplied lock-state label; not used to reconstruct sessions in this package.
+data/base/phone_events.csv,time_sec,float64,relative seconds,0,"Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+data/base/phone_sessions.csv,participant_id,object,identifier,0,Pseudonymous source participant identifier; stable across all tables.
+data/base/phone_sessions.csv,study_day,int64,index,0,"Supplied observation-day index; preserved, not inferred from midnight."
+data/base/phone_sessions.csv,session_id,object,identifier,0,Stable supplied session identifier; not reconstructed from event rows in this release.
+data/base/phone_sessions.csv,session_start_sec,float64,relative seconds,0,"Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+data/base/phone_sessions.csv,session_end_sec,float64,relative seconds,0,"Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+data/base/study_days.csv,participant_id,object,identifier,0,Pseudonymous source participant identifier; stable across all tables.
+data/base/study_days.csv,study_day,int64,index,0,"Supplied observation-day index; preserved, not inferred from midnight."
+data/base/study_days.csv,day_offset,int64,days,0,Source observation date minus the participant-specific first-session midnight; original date removed.
+data/derived/app_segments.csv,participant_id,object,identifier,0,Pseudonymous source participant identifier; stable across all tables.
+data/derived/app_segments.csv,study_day,int64,index,0,"Supplied observation-day index; preserved, not inferred from midnight."
+data/derived/app_segments.csv,session_id,object,identifier,0,Stable supplied session identifier; not reconstructed from event rows in this release.
+data/derived/app_segments.csv,segment_id,object,identifier,0,Stable supplied category interval identifier.
+data/derived/app_segments.csv,segment_order,int64,index,0,One-based within-session interval order; recomputed in cleaned data.
+data/derived/app_segments.csv,activity_category,object,category,0,One of the 12 documented software-activity categories.
+data/derived/app_segments.csv,segment_start_sec,float64,relative seconds,0,"Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+data/derived/app_segments.csv,segment_end_sec,float64,relative seconds,0,"Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+data/derived/app_segments.csv,source_segment_start_sec,float64,relative seconds,0,"Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+data/derived/app_segments.csv,source_segment_end_sec,float64,relative seconds,0,"Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+data/derived/app_segments.csv,boundary_adjusted,bool,boolean,0,Interval start or end changed by clipping to its parent session.
+data/derived/app_segments.csv,segment_duration_sec,float64,seconds,0,Cleaned segment end minus start.
+data/derived/app_segments.csv,is_category_change,bool,boolean,0,True for a noninitial segment whose category differs from the preceding segment in the same session.
+data/derived/between_session_transitions.csv,participant_id,object,identifier,0,Pseudonymous source participant identifier; stable across all tables.
+data/derived/between_session_transitions.csv,previous_session_id,object,identifier,0,Previous recorded session for the same participant; missing for first session.
+data/derived/between_session_transitions.csv,next_session_id,object,identifier,0,Next recorded session in a consecutive pair.
+data/derived/between_session_transitions.csv,previous_study_day,float64,index,0,Study day of previous recorded session; missing for first session.
+data/derived/between_session_transitions.csv,next_study_day,int64,index,0,Study-day label of next session.
+data/derived/between_session_transitions.csv,gap_sec,float64,seconds,0,Next start minus previous end; unknown logger uptime prevents interpreting it as observed inactivity.
+data/derived/between_session_transitions.csv,cross_study_day,bool,boolean,0,Pair crosses study-day labels; gap is not verified continuously observed idle time.
+data/derived/daily_summary.csv,participant_id,object,identifier,0,Pseudonymous source participant identifier; stable across all tables.
+data/derived/daily_summary.csv,study_day,int64,index,0,"Supplied observation-day index; preserved, not inferred from midnight."
+data/derived/daily_summary.csv,recorded_session_time_sec,float64,seconds,0,Sum of elapsed session durations including any gaps already merged upstream.
+data/derived/daily_summary.csv,session_count,int64,count,0,Recorded sessions in participant/study-day group.
+data/derived/daily_summary.csv,median_session_duration_sec,float64,seconds,0,Median session duration within supplied observation day.
+data/derived/daily_summary.csv,max_session_duration_sec,float64,seconds,0,Maximum session duration within supplied observation day.
+data/derived/daily_summary.csv,category_changes,int64,count,0,Actual within-session category changes in the day.
+data/derived/daily_summary.csv,unlabelled_sec,float64,seconds,0,Session/window duration with no category interval support; never imputed.
+data/derived/daily_summary.csv,category_changes_per_hour,float64,changes/hour,0,Within-session category changes divided by elapsed recorded session hours.
+data/derived/daily_summary.csv,activity_seconds_BROWSER_SEARCH,float64,seconds,0,Total clipped segment duration for category BROWSER_SEARCH.
+data/derived/daily_summary.csv,activity_seconds_CAMERA_MEDIA,float64,seconds,0,Total clipped segment duration for category CAMERA_MEDIA.
+data/derived/daily_summary.csv,activity_seconds_GAMING,float64,seconds,0,Total clipped segment duration for category GAMING.
+data/derived/daily_summary.csv,activity_seconds_MAP_NAVIGATION,float64,seconds,0,Total clipped segment duration for category MAP_NAVIGATION.
+data/derived/daily_summary.csv,activity_seconds_MESSAGING,float64,seconds,0,Total clipped segment duration for category MESSAGING.
+data/derived/daily_summary.csv,activity_seconds_MUSIC_AUDIO,float64,seconds,0,Total clipped segment duration for category MUSIC_AUDIO.
+data/derived/daily_summary.csv,activity_seconds_OTHER,float64,seconds,0,Total clipped segment duration for category OTHER.
+data/derived/daily_summary.csv,activity_seconds_PRODUCTIVITY,float64,seconds,0,Total clipped segment duration for category PRODUCTIVITY.
+data/derived/daily_summary.csv,activity_seconds_READING_NEWS,float64,seconds,0,Total clipped segment duration for category READING_NEWS.
+data/derived/daily_summary.csv,activity_seconds_SHOPPING,float64,seconds,0,Total clipped segment duration for category SHOPPING.
+data/derived/daily_summary.csv,activity_seconds_SOCIAL_FEED,float64,seconds,0,Total clipped segment duration for category SOCIAL_FEED.
+data/derived/daily_summary.csv,activity_seconds_VIDEO,float64,seconds,0,Total clipped segment duration for category VIDEO.
+data/derived/phone_sessions.csv,participant_id,object,identifier,0,Pseudonymous source participant identifier; stable across all tables.
+data/derived/phone_sessions.csv,study_day,int64,index,0,"Supplied observation-day index; preserved, not inferred from midnight."
+data/derived/phone_sessions.csv,session_id,object,identifier,0,Stable supplied session identifier; not reconstructed from event rows in this release.
+data/derived/phone_sessions.csv,session_start_sec,float64,relative seconds,0,"Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+data/derived/phone_sessions.csv,session_end_sec,float64,relative seconds,0,"Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+data/derived/phone_sessions.csv,session_duration_sec,float64,seconds,0,"Elapsed interval end minus start, including any brief gaps merged in supplied sessions."
+data/derived/phone_sessions.csv,session_order_today,int64,index,0,One-based chronological session order within supplied participant/study-day group.
+data/derived/phone_sessions.csv,previous_session_id,object,identifier,36,Previous recorded session for the same participant; missing for first session.
+data/derived/phone_sessions.csv,break_before_sec,float64,seconds,36,"Current start minus previous recorded session end, across study-day boundaries; first session missing."
+data/derived/phone_sessions.csv,previous_study_day,float64,index,36,Study day of previous recorded session; missing for first session.
+data/derived/phone_sessions.csv,cross_day_before,bool,boolean,0,Previous recorded session exists and has a different study-day label.
+data/derived/phone_sessions.csv,number_segments,int64,count,0,Number of linked cleaned segments.
+data/derived/phone_sessions.csv,number_category_changes,int64,count,0,Actual within-session category changes; not assumed equal to segment count minus one.
+data/derived/phone_sessions.csv,unique_categories,int64,count,0,Number of distinct segment categories within a session.
+data/derived/phone_sessions.csv,recent_use_30min_before_sec,float64,seconds,0,Intersection duration of recorded participant sessions and trailing horizon at window/session start. Can span study days; unavailable history is not observed inactivity.
+data/derived/phone_sessions.csv,recent_use_1h_before_sec,float64,seconds,0,Intersection duration of recorded participant sessions and trailing horizon at window/session start. Can span study days; unavailable history is not observed inactivity.
+data/derived/phone_sessions.csv,recent_use_2h_before_sec,float64,seconds,0,Intersection duration of recorded participant sessions and trailing horizon at window/session start. Can span study days; unavailable history is not observed inactivity.
+data/derived/phone_sessions.csv,recent_use_6h_before_sec,float64,seconds,0,Intersection duration of recorded participant sessions and trailing horizon at window/session start. Can span study days; unavailable history is not observed inactivity.
+data/derived/phone_sessions.csv,history_since_first_session_sec,float64,seconds,0,Elapsed time since first recorded session; not a measure of logger uptime.
+data/derived/phone_sessions.csv,cumulative_daily_use_before_sec,float64,seconds,0,Sum of preceding session durations within supplied study day.
+data/derived/phone_sessions.csv,category_covered_sec,float64,seconds,0,Sum of clipped category interval overlaps.
+data/derived/phone_sessions.csv,unlabelled_sec,float64,seconds,0,Session/window duration with no category interval support; never imputed.
+data/derived/phone_sessions.csv,dominant_category,object,category,0,Largest total clipped category duration in the session; alphabetical exact-tie break.
+data/derived/windows_60s.csv,participant_id,object,identifier,0,Pseudonymous source participant identifier; stable across all tables.
+data/derived/windows_60s.csv,study_day,int64,index,0,"Supplied observation-day index; preserved, not inferred from midnight."
+data/derived/windows_60s.csv,session_id,object,identifier,0,Stable supplied session identifier; not reconstructed from event rows in this release.
+data/derived/windows_60s.csv,window_id,object,identifier,0,Session identifier plus a zero-based four-digit window index.
+data/derived/windows_60s.csv,window_idx,int64,index,0,Zero-based index of consecutive 60-second session-relative windows.
+data/derived/windows_60s.csv,window_start_sec,float64,relative seconds,0,"Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+data/derived/windows_60s.csv,window_end_sec,float64,relative seconds,0,"Time from participant-specific source midnight of first recorded session; calendar origin removed; interval convention [start,end). Source_segment fields preserve pre-clipping values."
+data/derived/windows_60s.csv,window_actual_duration_sec,float64,seconds,0,Window end minus start; partial terminal windows retained.
+data/derived/windows_60s.csv,dominant_activity_category,object,category,0,Largest category-overlap duration in the window; alphabetical exact-tie break; UNLABELLED when no coverage.
+data/derived/windows_60s.csv,category_covered_sec,float64,seconds,0,Sum of clipped category interval overlaps.
+data/derived/windows_60s.csv,unlabelled_sec,float64,seconds,0,Session/window duration with no category interval support; never imputed.
+data/derived/windows_60s.csv,n_categories,int64,count,0,Distinct categories with positive overlap above numerical tolerance in a window.
+data/derived/windows_60s.csv,dominant_overlap_sec,float64,seconds,0,Largest category-overlap duration within window.
+data/derived/windows_60s.csv,dominant_fraction,float64,fraction,0,Dominant category overlap divided by actual window duration (including unlabelled time).
+data/derived/windows_60s.csv,minority_category_sec,float64,seconds,0,Category-covered duration minus dominant category duration.
+data/derived/windows_60s.csv,rolling_use_30min_sec,float64,seconds,0,Intersection duration of recorded participant sessions and trailing horizon at window/session start. Can span study days; unavailable history is not observed inactivity.
+data/derived/windows_60s.csv,rolling_use_1h_sec,float64,seconds,0,Intersection duration of recorded participant sessions and trailing horizon at window/session start. Can span study days; unavailable history is not observed inactivity.
+data/derived/windows_60s.csv,rolling_use_2h_sec,float64,seconds,0,Intersection duration of recorded participant sessions and trailing horizon at window/session start. Can span study days; unavailable history is not observed inactivity.
+data/derived/windows_60s.csv,rolling_use_6h_sec,float64,seconds,0,Intersection duration of recorded participant sessions and trailing horizon at window/session start. Can span study days; unavailable history is not observed inactivity.
+data/derived/windows_60s.csv,cumulative_daily_use_sec,float64,seconds,0,Recorded duration within supplied study day before window start.
+data/derived/windows_60s.csv,mean_ambient_light_lux,float64,source scale; see base field,30,Arithmetic mean of nonmissing direct context samples in window: ambient_light_lux. Not time-weighted or interpolated.
+data/derived/windows_60s.csv,mean_screen_brightness,float64,source scale; see base field,30,Arithmetic mean of nonmissing direct context samples in window: screen_brightness. Not time-weighted or interpolated.
+data/derived/windows_60s.csv,mean_accelerometer_magnitude,float64,source scale; see base field,30,Arithmetic mean of nonmissing direct context samples in window: accelerometer_magnitude. Not time-weighted or interpolated.
+data/derived/windows_60s.csv,mean_gyroscope_magnitude,float64,source scale; see base field,30,Arithmetic mean of nonmissing direct context samples in window: gyroscope_magnitude. Not time-weighted or interpolated.
+data/derived/windows_60s.csv,context_sample_count,int64,count,0,Context samples assigned by half-open session-relative time; no interpolation.
+data/derived/windows_60s.csv,n_ambient_light_lux,int64,count,0,Number of nonmissing direct context samples for ambient_light_lux.
+data/derived/windows_60s.csv,n_screen_brightness,int64,count,0,Number of nonmissing direct context samples for screen_brightness.
+data/derived/windows_60s.csv,n_accelerometer_magnitude,int64,count,0,Number of nonmissing direct context samples for accelerometer_magnitude.
+data/derived/windows_60s.csv,n_gyroscope_magnitude,int64,count,0,Number of nonmissing direct context samples for gyroscope_magnitude.
