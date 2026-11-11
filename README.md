@@ -27,7 +27,6 @@ python -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
 python scripts/reproduce.py
-python -m unittest discover -s tests -v
 ```
 
 On Windows, activate the environment with `.venv\Scripts\Activate.ps1` instead of `source`.
